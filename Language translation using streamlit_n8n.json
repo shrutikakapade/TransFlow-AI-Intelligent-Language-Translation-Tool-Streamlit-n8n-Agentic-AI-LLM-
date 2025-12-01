@@ -1,0 +1,92 @@
+{
+  "name": "Language translate using streamlit",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "97b0edee-c0f1-4e88-bca1-2b5625e041c4",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "7436bb7f-26c0-463a-b5cf-f1a06f867dfc",
+      "name": "Webhook",
+      "webhookId": "97b0edee-c0f1-4e88-bca1-2b5625e041c4"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=translate the text: {{ $json.body.input }} in any language in bedst and easy way (marathi)",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        208,
+        0
+      ],
+      "id": "7bc251e0-3967-4d98-8107-e6d335a5fa1b",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        112,
+        240
+      ],
+      "id": "46abd3bd-8e7c-4b39-a34f-ec44497116e7",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "JABx29CCIR5xGBBq",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "b8692ef4-7794-43e3-a991-d72952b480cc",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5c719f4fcdf2c8e3effc271574cd66427209ca56bef062f8814906f9e0661fa9"
+  },
+  "id": "JjKOuQYyu4VAuGiA",
+  "tags": []
+}
