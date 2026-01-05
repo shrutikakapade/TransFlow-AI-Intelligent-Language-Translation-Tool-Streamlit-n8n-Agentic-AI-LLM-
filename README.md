@@ -63,6 +63,12 @@
           <span class="pill">Integrations</span>
           <p>Python requests library for HTTP; n8n cloud webhook endpoint</p>
         </div>
+
+        
+
+https://github.com/user-attachments/assets/e16b03b5-c6ba-4b94-8642-8b4fff1f2bbd
+
+
       
      
 <div
@@ -133,6 +139,12 @@ cd TransFlow-AI-Translator</code></pre>
       </ul>
     </section>
 <div
+
+
+
+
+
+
     
   </main>
 </body>
